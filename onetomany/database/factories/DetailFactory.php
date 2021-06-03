@@ -2,11 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Detail;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Detail::class, function (Faker $faker) {
     return [
-        //
+        'argument' => $faker -> word,
+        'likes' => $faker -> numberBetween(0, 10000)
     ];
 });

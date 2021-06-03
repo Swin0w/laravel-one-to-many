@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Post;
+use App\Tag;
+
 class PostSeeder extends Seeder
 {
     /**
@@ -11,6 +14,11 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Post::class, 50) -> make()
+            -> each(function($post){
+                $tag = Tag::inRandomOrder() -> first();
+                $post -> tag_id = $tag -> id;
+                $post -> save();
+            });
     }
 }
