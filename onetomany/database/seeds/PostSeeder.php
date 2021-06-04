@@ -14,10 +14,14 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+        // Crea 50 elementi da inserire nella tabella POST ma non li salva nel db. Itera su ciascuno di loro
         factory(Post::class, 50) -> make()
             -> each(function($post){
+                // Recupera un elemento casuale dalla tabella TAG
                 $tag = Tag::inRandomOrder() -> first();
+                // Associa la chiave esterna con la chiave primaria
                 $post -> tag_id = $tag -> id;
+                // Salva il post
                 $post -> save();
             });
     }

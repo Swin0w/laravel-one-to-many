@@ -12,6 +12,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
+        // Inserisce 10 elementi e li salva nella tabella TAG del database
         factory(Tag::class, 10) -> create();
     }
 }
