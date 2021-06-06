@@ -16,7 +16,7 @@ class CreateDetailsTable extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table-> id();
            
-            $table -> string('title');
+            $table -> string('argument');
             $table -> integer('likes');
            
             $table -> bigInteger('post_id') -> unsigned() -> index();

@@ -9,7 +9,11 @@
                 <b>TAG: </b>{{$post -> tag -> name}}<br>
                 {{$post -> tag -> description}}
             </p>
-
+            <p>
+                <b>Dettagli:</b><br>
+                <b>Likes: </b>{{$post -> detail -> likes}}
+                <b>Argomento: </b>{{$post -> detail -> argument}}
+            </p>
         </li>             
     @endforeach
 
